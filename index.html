@@ -66,6 +66,23 @@ h1 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 600; line-hei
 .name-modal-box input { width: 100%; border: 0.5px solid var(--line); border-radius: 10px; padding: 10px 14px; font-family: 'Lato', sans-serif; font-size: 15px; margin-bottom: 14px; text-align: center; }
 .name-modal-box input:focus { outline: none; border-color: var(--rose); }
 .name-modal-box .submit-btn { width: 100%; justify-content: center; padding: 12px; }
+
+.filter-row { display:flex; justify-content:flex-end; margin-bottom:14px; }
+.filter-btn { font-size:13px; color: var(--ink-soft); background: var(--card); border:0.5px solid var(--line); padding:7px 14px; border-radius:18px; cursor:pointer; font-family:'Lato',sans-serif; }
+.filter-btn.active { background: linear-gradient(135deg, var(--sage-deep), var(--sage)); color:#fff; border-color: transparent; }
+.mod-group { margin-bottom: 12px; }
+.mod-header { display:flex; align-items:center; justify-content:space-between; background: var(--card); border: 0.5px solid var(--line); border-radius: 16px; padding: 18px 22px; cursor: pointer; box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 6px 16px rgba(169,91,104,.07); }
+.mod-header .eyebrow { margin:0 0 4px; }
+.mod-header h1 { margin:0; font-family:'Fraunces',serif; color:var(--ink); }
+.mod-chevron { font-size: 16px; color: var(--ink-soft); transition: transform .25s ease; flex-shrink:0; margin-left:12px; }
+.mod-group.open .mod-chevron { transform: rotate(180deg); }
+.mod-body { display:none; padding-top: 8px; }
+.mod-group.open .mod-body { display:block; }
+.sub-card { display:flex; align-items:center; justify-content:space-between; gap:10px; text-decoration:none; color: var(--ink); background: var(--card); border: 0.5px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 0 0 8px 18px; font-size: 14px; }
+.sub-card:hover { border-color: var(--rose); }
+.sub-card.is-done { opacity: .6; }
+.sub-card .done-badge { color: var(--sage-deep); font-weight:700; font-size:15px; flex-shrink:0; }
+.mod-group.all-done > .mod-header { opacity: .65; }
 </style>
 </head>
 <body>
@@ -100,211 +117,136 @@ h1 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 600; line-hei
   <div class="progress-track" style="margin-top:20px;"><div class="progress-fill" id="idx-progress-fill" style="width:0%;"></div></div>
   <p class="footer-note" id="idx-progress-label" style="margin-top:0; text-align:left;"></p>
   <a id="idx-continue-btn" href="#" style="display:none; margin:4px 0 20px; background:linear-gradient(135deg, var(--apricot), var(--rose)); color:#fff; font-size:14px; font-weight:700; padding:12px 24px; border-radius:24px; text-decoration:none; text-align:center;">Weiter da, wo du aufgehört hast →</a>
-  <a href="modul-10.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 10</p>
-      <h1 style="font-size:20px;">Claude einrichten</h1>
-    </div></a>
-<a href="modul-10-1.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 10.1</p>
-      <h1 style="font-size:20px;">Claude-Account & Desktop-App</h1>
-    </div></a>
-<a href="modul-10-2.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 10.2</p>
-      <h1 style="font-size:20px;">Business-Ordner aufbauen</h1>
-    </div></a>
-<a href="modul-10-3.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 10.3</p>
-      <h1 style="font-size:20px;">Brand Voice trainieren</h1>
-    </div></a>
-<a href="modul-10-4.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 10.4</p>
-      <h1 style="font-size:20px;">GitHub & Netlify einrichten</h1>
-    </div></a>
-<a href="modul-11.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 11</p>
-      <h1 style="font-size:20px;">KI-Assistenten & Agenten bauen</h1>
-    </div></a>
-<a href="modul-11-1.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 11.1</p>
-      <h1 style="font-size:20px;">Der Aufbau eines Skills</h1>
-    </div></a>
-<a href="modul-11-2.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 11.2</p>
-      <h1 style="font-size:20px;">Was einen guten Skill ausmacht</h1>
-    </div></a>
-<a href="modul-12.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 12</p>
-      <h1 style="font-size:20px;">Website bauen</h1>
-    </div></a>
-<a href="modul-12-1.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 12.1</p>
-      <h1 style="font-size:20px;">Einmalige Einrichtung</h1>
-    </div></a>
-<a href="modul-12-2.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 12.2</p>
-      <h1 style="font-size:20px;">Inhalte vorbereiten</h1>
-    </div></a>
-<a href="modul-12-3.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 12.3</p>
-      <h1 style="font-size:20px;">Der Bau-Prompt</h1>
-    </div></a>
-<a href="modul-12-4.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 12.4</p>
-      <h1 style="font-size:20px;">Rechtliches & live stellen</h1>
-    </div></a>
-<a href="modul-13.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 13</p>
-      <h1 style="font-size:20px;">Landingpage bauen</h1>
-    </div></a>
-<a href="modul-13-1.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 13.1</p>
-      <h1 style="font-size:20px;">Vorteils-Dokument & Papageien-Test</h1>
-    </div></a>
-<a href="modul-13-2.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 13.2</p>
-      <h1 style="font-size:20px;">Bauen & live stellen</h1>
-    </div></a>
-<a href="modul-13-3.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 13.3</p>
-      <h1 style="font-size:20px;">Troubleshooting</h1>
-    </div></a>
-<a href="modul-14.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 14</p>
-      <h1 style="font-size:20px;">Sales Page bauen</h1>
-    </div></a>
-<a href="modul-14-1.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 14.1</p>
-      <h1 style="font-size:20px;">Die bewährte Struktur</h1>
-    </div></a>
-<a href="modul-14-2.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 14.2</p>
-      <h1 style="font-size:20px;">Der häufigste Fehler</h1>
-    </div></a>
-<a href="modul-15.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 15</p>
-      <h1 style="font-size:20px;">Mini-Produkte & Produkttreppe</h1>
-    </div></a>
-<a href="modul-15-1.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 15.1</p>
-      <h1 style="font-size:20px;">Die Phasen der Ideenfindung</h1>
-    </div></a>
-<a href="modul-15-2.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 15.2</p>
-      <h1 style="font-size:20px;">Anti-Vanilla-Formate & Sog statt Druck</h1>
-    </div></a>
-<a href="modul-15-3.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 15.3</p>
-      <h1 style="font-size:20px;">Netlify per Drag & Drop</h1>
-    </div></a>
-<a href="modul-15-4.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 15.4</p>
-      <h1 style="font-size:20px;">Digistore24 einrichten</h1>
-    </div></a>
-<a href="modul-15-5.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 15.5</p>
-      <h1 style="font-size:20px;">Genehmigung, Kauflink & Testverkauf</h1>
-    </div></a>
-<a href="modul-16.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 16</p>
-      <h1 style="font-size:20px;">Redaktionskalender mit Claude bauen</h1>
-    </div></a>
-<a href="modul-16-1.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 16.1</p>
-      <h1 style="font-size:20px;">Das Newsletter-Raster</h1>
-    </div></a>
-<a href="modul-16-2.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 16.2</p>
-      <h1 style="font-size:20px;">Anti-KI-Regeln für deinen Content</h1>
-    </div></a>
-<a href="modul-17.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 17</p>
-      <h1 style="font-size:20px;">Design & Brand Voice</h1>
-    </div></a>
-<a href="modul-17-1.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 17.1</p>
-      <h1 style="font-size:20px;">Deine Stimme statt KI-Standardsprache</h1>
-    </div></a>
-<a href="modul-17-2.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 17.2</p>
-      <h1 style="font-size:20px;">Design-Grundlagen für deine Seiten</h1>
-    </div></a>
-<a href="modul-18.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 18</p>
-      <h1 style="font-size:20px;">KI-Bildgenerierung & Kennzeichnung</h1>
-    </div></a>
-<a href="modul-18-1.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 18.1</p>
-      <h1 style="font-size:20px;">Richtig kennzeichnen in der Praxis</h1>
-    </div></a>
-<a href="modul-18-2.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 18.2</p>
-      <h1 style="font-size:20px;">Wo überall die Pflicht gilt</h1>
-    </div></a>
-<a href="modul-19.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 19</p>
-      <h1 style="font-size:20px;">Grenzen von KI verstehen</h1>
-    </div></a>
-<a href="modul-19-1.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 19.1</p>
-      <h1 style="font-size:20px;">Halluzinationen erkennen</h1>
-    </div></a>
-<a href="modul-19-2.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 19.2</p>
-      <h1 style="font-size:20px;">Wo KI nicht ersetzen sollte</h1>
-    </div></a>
-<a href="modul-20.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 20</p>
-      <h1 style="font-size:20px;">Datenschutz & DSGVO für Coaches</h1>
-    </div></a>
-<a href="modul-20-1.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 20.1</p>
-      <h1 style="font-size:20px;">Was Claude wirklich sieht</h1>
-    </div></a>
-<a href="modul-20-2.html" style="text-decoration:none;">
-    <div class="card" style="margin-bottom:14px; cursor:pointer;">
-      <p class="eyebrow">Modul 20.2</p>
-      <h1 style="font-size:20px;">Verschlüsselung: PC, Ordner & Google Drive</h1>
-    </div></a>
+  <div class="filter-row"><button class="filter-btn" id="filter-toggle-btn" onclick="toggleFilter()">Nur Offenes zeigen</button></div>
+<div class="mod-group" id="group-10">
+  <div class="mod-header" onclick="toggleGroup('10')">
+    <div><p class="eyebrow">Modul 10</p><h1 style="font-size:18px;">Claude einrichten</h1></div>
+    <span class="mod-chevron" id="chev-10">▾</span>
+  </div>
+  <div class="mod-body" id="body-10">
+    <a href="modul-10.html" class="sub-card" data-file="modul-10.html"><span>Übersicht: Claude einrichten</span><span class="done-badge"></span></a>
+    <a href="modul-10-1.html" class="sub-card" data-file="modul-10-1.html"><span>Modul 10.1 Claude-Account & Desktop-App</span><span class="done-badge"></span></a>
+    <a href="modul-10-2.html" class="sub-card" data-file="modul-10-2.html"><span>Modul 10.2 Business-Ordner aufbauen</span><span class="done-badge"></span></a>
+    <a href="modul-10-3.html" class="sub-card" data-file="modul-10-3.html"><span>Modul 10.3 Brand Voice trainieren</span><span class="done-badge"></span></a>
+    <a href="modul-10-4.html" class="sub-card" data-file="modul-10-4.html"><span>Modul 10.4 GitHub & Netlify einrichten</span><span class="done-badge"></span></a>
+  </div>
+</div>
+<div class="mod-group" id="group-11">
+  <div class="mod-header" onclick="toggleGroup('11')">
+    <div><p class="eyebrow">Modul 11</p><h1 style="font-size:18px;">KI-Assistenten & Agenten bauen</h1></div>
+    <span class="mod-chevron" id="chev-11">▾</span>
+  </div>
+  <div class="mod-body" id="body-11">
+    <a href="modul-11.html" class="sub-card" data-file="modul-11.html"><span>Übersicht: KI-Assistenten & Agenten bauen</span><span class="done-badge"></span></a>
+    <a href="modul-11-1.html" class="sub-card" data-file="modul-11-1.html"><span>Modul 11.1 Der Aufbau eines Skills</span><span class="done-badge"></span></a>
+    <a href="modul-11-2.html" class="sub-card" data-file="modul-11-2.html"><span>Modul 11.2 Was einen guten Skill ausmacht</span><span class="done-badge"></span></a>
+  </div>
+</div>
+<div class="mod-group" id="group-12">
+  <div class="mod-header" onclick="toggleGroup('12')">
+    <div><p class="eyebrow">Modul 12</p><h1 style="font-size:18px;">Website bauen</h1></div>
+    <span class="mod-chevron" id="chev-12">▾</span>
+  </div>
+  <div class="mod-body" id="body-12">
+    <a href="modul-12.html" class="sub-card" data-file="modul-12.html"><span>Übersicht: Website bauen</span><span class="done-badge"></span></a>
+    <a href="modul-12-1.html" class="sub-card" data-file="modul-12-1.html"><span>Modul 12.1 Einmalige Einrichtung</span><span class="done-badge"></span></a>
+    <a href="modul-12-2.html" class="sub-card" data-file="modul-12-2.html"><span>Modul 12.2 Inhalte vorbereiten</span><span class="done-badge"></span></a>
+    <a href="modul-12-3.html" class="sub-card" data-file="modul-12-3.html"><span>Modul 12.3 Der Bau-Prompt</span><span class="done-badge"></span></a>
+    <a href="modul-12-4.html" class="sub-card" data-file="modul-12-4.html"><span>Modul 12.4 Rechtliches & live stellen</span><span class="done-badge"></span></a>
+  </div>
+</div>
+<div class="mod-group" id="group-13">
+  <div class="mod-header" onclick="toggleGroup('13')">
+    <div><p class="eyebrow">Modul 13</p><h1 style="font-size:18px;">Landingpage bauen</h1></div>
+    <span class="mod-chevron" id="chev-13">▾</span>
+  </div>
+  <div class="mod-body" id="body-13">
+    <a href="modul-13.html" class="sub-card" data-file="modul-13.html"><span>Übersicht: Landingpage bauen</span><span class="done-badge"></span></a>
+    <a href="modul-13-1.html" class="sub-card" data-file="modul-13-1.html"><span>Modul 13.1 Vorteils-Dokument & Papageien-Test</span><span class="done-badge"></span></a>
+    <a href="modul-13-2.html" class="sub-card" data-file="modul-13-2.html"><span>Modul 13.2 Bauen & live stellen</span><span class="done-badge"></span></a>
+    <a href="modul-13-3.html" class="sub-card" data-file="modul-13-3.html"><span>Modul 13.3 Troubleshooting</span><span class="done-badge"></span></a>
+  </div>
+</div>
+<div class="mod-group" id="group-14">
+  <div class="mod-header" onclick="toggleGroup('14')">
+    <div><p class="eyebrow">Modul 14</p><h1 style="font-size:18px;">Sales Page bauen</h1></div>
+    <span class="mod-chevron" id="chev-14">▾</span>
+  </div>
+  <div class="mod-body" id="body-14">
+    <a href="modul-14.html" class="sub-card" data-file="modul-14.html"><span>Übersicht: Sales Page bauen</span><span class="done-badge"></span></a>
+    <a href="modul-14-1.html" class="sub-card" data-file="modul-14-1.html"><span>Modul 14.1 Die bewährte Struktur</span><span class="done-badge"></span></a>
+    <a href="modul-14-2.html" class="sub-card" data-file="modul-14-2.html"><span>Modul 14.2 Der häufigste Fehler</span><span class="done-badge"></span></a>
+  </div>
+</div>
+<div class="mod-group" id="group-15">
+  <div class="mod-header" onclick="toggleGroup('15')">
+    <div><p class="eyebrow">Modul 15</p><h1 style="font-size:18px;">Mini-Produkte & Produkttreppe</h1></div>
+    <span class="mod-chevron" id="chev-15">▾</span>
+  </div>
+  <div class="mod-body" id="body-15">
+    <a href="modul-15.html" class="sub-card" data-file="modul-15.html"><span>Übersicht: Mini-Produkte & Produkttreppe</span><span class="done-badge"></span></a>
+    <a href="modul-15-1.html" class="sub-card" data-file="modul-15-1.html"><span>Modul 15.1 Die Phasen der Ideenfindung</span><span class="done-badge"></span></a>
+    <a href="modul-15-2.html" class="sub-card" data-file="modul-15-2.html"><span>Modul 15.2 Anti-Vanilla-Formate & Sog statt Druck</span><span class="done-badge"></span></a>
+    <a href="modul-15-3.html" class="sub-card" data-file="modul-15-3.html"><span>Modul 15.3 Netlify per Drag & Drop</span><span class="done-badge"></span></a>
+    <a href="modul-15-4.html" class="sub-card" data-file="modul-15-4.html"><span>Modul 15.4 Digistore24 einrichten</span><span class="done-badge"></span></a>
+    <a href="modul-15-5.html" class="sub-card" data-file="modul-15-5.html"><span>Modul 15.5 Genehmigung, Kauflink & Testverkauf</span><span class="done-badge"></span></a>
+  </div>
+</div>
+<div class="mod-group" id="group-16">
+  <div class="mod-header" onclick="toggleGroup('16')">
+    <div><p class="eyebrow">Modul 16</p><h1 style="font-size:18px;">Redaktionskalender mit Claude bauen</h1></div>
+    <span class="mod-chevron" id="chev-16">▾</span>
+  </div>
+  <div class="mod-body" id="body-16">
+    <a href="modul-16.html" class="sub-card" data-file="modul-16.html"><span>Übersicht: Redaktionskalender mit Claude bauen</span><span class="done-badge"></span></a>
+    <a href="modul-16-1.html" class="sub-card" data-file="modul-16-1.html"><span>Modul 16.1 Das Newsletter-Raster</span><span class="done-badge"></span></a>
+    <a href="modul-16-2.html" class="sub-card" data-file="modul-16-2.html"><span>Modul 16.2 Anti-KI-Regeln für deinen Content</span><span class="done-badge"></span></a>
+  </div>
+</div>
+<div class="mod-group" id="group-17">
+  <div class="mod-header" onclick="toggleGroup('17')">
+    <div><p class="eyebrow">Modul 17</p><h1 style="font-size:18px;">Design & Brand Voice</h1></div>
+    <span class="mod-chevron" id="chev-17">▾</span>
+  </div>
+  <div class="mod-body" id="body-17">
+    <a href="modul-17.html" class="sub-card" data-file="modul-17.html"><span>Übersicht: Design & Brand Voice</span><span class="done-badge"></span></a>
+    <a href="modul-17-1.html" class="sub-card" data-file="modul-17-1.html"><span>Modul 17.1 Deine Stimme statt KI-Standardsprache</span><span class="done-badge"></span></a>
+    <a href="modul-17-2.html" class="sub-card" data-file="modul-17-2.html"><span>Modul 17.2 Design-Grundlagen für deine Seiten</span><span class="done-badge"></span></a>
+  </div>
+</div>
+<div class="mod-group" id="group-18">
+  <div class="mod-header" onclick="toggleGroup('18')">
+    <div><p class="eyebrow">Modul 18</p><h1 style="font-size:18px;">KI-Bildgenerierung & Kennzeichnung</h1></div>
+    <span class="mod-chevron" id="chev-18">▾</span>
+  </div>
+  <div class="mod-body" id="body-18">
+    <a href="modul-18.html" class="sub-card" data-file="modul-18.html"><span>Übersicht: KI-Bildgenerierung & Kennzeichnung</span><span class="done-badge"></span></a>
+    <a href="modul-18-1.html" class="sub-card" data-file="modul-18-1.html"><span>Modul 18.1 Richtig kennzeichnen in der Praxis</span><span class="done-badge"></span></a>
+    <a href="modul-18-2.html" class="sub-card" data-file="modul-18-2.html"><span>Modul 18.2 Wo überall die Pflicht gilt</span><span class="done-badge"></span></a>
+  </div>
+</div>
+<div class="mod-group" id="group-19">
+  <div class="mod-header" onclick="toggleGroup('19')">
+    <div><p class="eyebrow">Modul 19</p><h1 style="font-size:18px;">Grenzen von KI verstehen</h1></div>
+    <span class="mod-chevron" id="chev-19">▾</span>
+  </div>
+  <div class="mod-body" id="body-19">
+    <a href="modul-19.html" class="sub-card" data-file="modul-19.html"><span>Übersicht: Grenzen von KI verstehen</span><span class="done-badge"></span></a>
+    <a href="modul-19-1.html" class="sub-card" data-file="modul-19-1.html"><span>Modul 19.1 Halluzinationen erkennen</span><span class="done-badge"></span></a>
+    <a href="modul-19-2.html" class="sub-card" data-file="modul-19-2.html"><span>Modul 19.2 Wo KI nicht ersetzen sollte</span><span class="done-badge"></span></a>
+  </div>
+</div>
+<div class="mod-group" id="group-20">
+  <div class="mod-header" onclick="toggleGroup('20')">
+    <div><p class="eyebrow">Modul 20</p><h1 style="font-size:18px;">Datenschutz & DSGVO für Coaches</h1></div>
+    <span class="mod-chevron" id="chev-20">▾</span>
+  </div>
+  <div class="mod-body" id="body-20">
+    <a href="modul-20.html" class="sub-card" data-file="modul-20.html"><span>Übersicht: Datenschutz & DSGVO für Coaches</span><span class="done-badge"></span></a>
+    <a href="modul-20-1.html" class="sub-card" data-file="modul-20-1.html"><span>Modul 20.1 Was Claude wirklich sieht</span><span class="done-badge"></span></a>
+    <a href="modul-20-2.html" class="sub-card" data-file="modul-20-2.html"><span>Modul 20.2 Verschlüsselung: PC, Ordner & Google Drive</span><span class="done-badge"></span></a>
+  </div>
+</div>
 
   <div class="example"><strong>Kommt noch:</strong><br>
 Launch-Modul (folgt später)</div>
@@ -351,6 +293,55 @@ try {
     document.getElementById('idx-progress-label').textContent = 'Du hast hier noch nicht gestartet.';
   }
 } catch(e) {}
+
+function lessonDoneKey(file) {
+  return 'ki_' + file.replace('.html','').replace('modul-','modul').replace(/-/g,'_');
+}
+function isLessonDone(file) {
+  try {
+    const raw = localStorage.getItem(lessonDoneKey(file));
+    if (!raw) return false;
+    const data = JSON.parse(raw);
+    return Object.values(data).some(v => v && String(v).trim().length > 0);
+  } catch(e) { return false; }
+}
+function toggleGroup(num) {
+  const g = document.getElementById('group-'+num);
+  if (g) g.classList.toggle('open');
+}
+let hideDoneLessons = false;
+function toggleFilter() {
+  hideDoneLessons = !hideDoneLessons;
+  const btn = document.getElementById('filter-toggle-btn');
+  btn.classList.toggle('active', hideDoneLessons);
+  btn.textContent = hideDoneLessons ? '✓ Nur Offenes' : 'Nur Offenes zeigen';
+  applyDoneStates();
+}
+function applyDoneStates() {
+  document.querySelectorAll('.sub-card').forEach(el => {
+    const file = el.dataset.file;
+    const done = isLessonDone(file);
+    const badge = el.querySelector('.done-badge');
+    if (badge) badge.textContent = done ? '✓' : '';
+    el.classList.toggle('is-done', done);
+    el.style.display = (hideDoneLessons && done) ? 'none' : 'flex';
+  });
+  document.querySelectorAll('.mod-group').forEach(g => {
+    const subs = g.querySelectorAll('.sub-card');
+    const allDone = subs.length > 0 && Array.from(subs).every(el => isLessonDone(el.dataset.file));
+    g.classList.toggle('all-done', allDone);
+  });
+}
+try {
+  const lastLesson = localStorage.getItem('ki_last_lesson');
+  if (lastLesson) {
+    const m = lastLesson.match(/^modul-(\d+)/);
+    if (m) { const grp = document.getElementById('group-'+m[1]); if (grp) grp.classList.add('open'); }
+  } else {
+    const firstGrp = document.querySelector('.mod-group'); if (firstGrp) firstGrp.classList.add('open');
+  }
+} catch(e) {}
+applyDoneStates();
 </script>
 </body>
 </html>
